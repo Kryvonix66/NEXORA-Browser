@@ -1,0 +1,25 @@
+{
+  "name": "nexora-browser",
+  "version": "1.0.0",
+  "description": "NEXORA - a futuristic desktop browser built with Electron",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^35.1.5",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.nexora.browser",
+    "productName": "NEXORA",
+    "files": ["src/**/*", "package.json"],
+    "directories": { "buildResources": "assets" },
+    "win": { "target": ["nsis", "portable"] },
+    "mac": { "target": ["dmg"] },
+    "linux": { "target": ["AppImage"] }
+  }
+}

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self'; img-src 'self' data: https:; connect-src https:;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXORA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">N</span><span>NEXORA</span><small> BROWSER</small></div>
+      <div class="window-actions"><span class="live-dot"></span><span>PRIVATE BY DESIGN</span></div>
+    </header>
+
+    <div class="browser-row">
+      <div class="tabs" id="tabs"></div>
+      <button class="icon-btn add-tab" id="newTab" title="New tab">＋</button>
+      <div class="toolbar-actions">
+        <button class="icon-btn" id="themeBtn" title="Change theme">◐</button>
+        <button class="icon-btn" id="workspaceBtn" title="Workspaces">▦</button>
+        <button class="icon-btn" id="settingsBtn" title="Settings">⚙</button>
+      </div>
+    </div>
+
+    <div class="navigation">
+      <button class="nav-btn" id="backBtn" title="Back">‹</button>
+      <button class="nav-btn" id="forwardBtn" title="Forward">›</button>
+      <button class="nav-btn" id="reloadBtn" title="Reload">↻</button>
+      <button class="nav-btn home-btn" id="homeBtn" title="Home">⌂</button>
+      <form id="addressForm" class="address-wrap">
+        <span class="search-symbol">⌕</span>
+        <input id="address" autocomplete="off" spellcheck="false" placeholder="Search or enter a website address">
+        <span class="secure-label">NEXORA</span>
+      </form>
+      <button class="nav-btn" id="bookmarkBtn" title="Bookmark this page">☆</button>
+      <button class="nav-btn" id="pipBtn" title="Picture-in-picture">▣</button>
+      <button class="nav-btn" id="sidebarToggle" title="Toggle social sidebar">☷</button>
+    </div>
+
+    <main class="workspace">
+      <section class="web-area">
+        <div class="start-page" id="startPage">
+          <div class="hero-glow"></div>
+          <div class="hero">
+            <div class="hero-logo">N<span>✦</span></div>
+            <div class="eyebrow">YOUR DIGITAL SPACE</div>
+            <h1>Explore beyond.</h1>
+            <p>A faster way to move through your world.</p>
+            <form id="heroSearch" class="hero-search">
+              <span>⌕</span><input id="heroInput" placeholder="What are you looking for?"><button>→</button>
+            </form>
+            <div class="quick-links">
+              <button data-url="https://www.youtube.com"><b class="ql youtube">▶</b>YouTube</button>
+              <button data-url="https://www.instagram.com"><b class="ql instagram">◎</b>Instagram</button>
+              <button data-url="https://www.tiktok.com"><b class="ql tiktok">♪</b>TikTok</button>
+              <button data-url="https://discord.com/app"><b class="ql discord">◈</b>Discord</button>
+              <button data-url="https://www.google.com"><b class="ql google">G</b>Google</button>
+            </div>
+          </div>
+          <div class="start-footer"><span id="clock">--:--</span><span>MADE FOR WHAT'S NEXT</span></div>
+        </div>
+        <div id="webviews"></div>
+      </section>
+
+      <aside class="social-sidebar" id="socialSidebar">
+        <div class="side-heading">SOCIAL SPACE <button id="addSocial" title="Add custom website">＋</button></div>
+        <button class="social-item active" data-url="https://www.instagram.com" data-name="Instagram"><span class="social-icon ig">◎</span><span>Instagram</span></button>
+        <button class="social-item" data-url="https://www.youtube.com" data-name="YouTube"><span class="social-icon yt">▶</span><span>YouTube</span></button>
+        <button class="social-item" data-url="https://www.tiktok.com" data-name="TikTok"><span class="social-icon tt">♪</span><span>TikTok</span></button>
+        <button class="social-item" data-url="https://discord.com/app" data-name="Discord"><span class="social-icon dc">◈</span><span>Discord</span></button>
+        <button class="social-item" data-url="https://x.com" data-name="X"><span class="social-icon xx">𝕏</span><span>X</span></button>
+        <button class="social-item" data-url="https://web.whatsapp.com" data-name="WhatsApp"><span class="social-icon wa">◉</span><span>WhatsApp</span></button>
+        <div class="side-bottom">
+          <button id="aiOpen"><span class="ai-orb">✦</span><span>AI Assistant</span><i>NEW</i></button>
+          <button id="notesOpen"><span>▤</span><span>Quick notes</span></button>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <div class="overlay hidden" id="panelOverlay">
+    <section class="floating-panel" id="panelContent"></section>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="renderer.js"></script>
+</body>
+</html>

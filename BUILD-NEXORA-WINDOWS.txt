@@ -1,0 +1,14 @@
+NEXORA WINDOWS APP BUILD
+
+This project is an Electron desktop browser. To produce Windows .exe files:
+1. Install Node.js LTS from https://nodejs.org/ (one-time prerequisite).
+2. Extract this ZIP to a normal folder on your PC.
+3. Double-click build-windows.bat.
+4. Wait for the build to finish. The dist folder will open automatically.
+
+Expected outputs:
+- NEXORA Setup.exe: installer for Windows
+- NEXORA <version>.exe: portable version (filename may vary)
+
+You do not need to open VS Code or edit source code.
+An internet connection is required for the first build so npm can download Electron and build tools.
